@@ -166,12 +166,12 @@ class PenggunaController extends Controller
 		
         $this->validate($request, [
        
-            'name' => 'required|string', 
-            'phone' => 'required|min:10|max:15|regex:/^[- +()]*[0-9][- +()0-9]*$/',
+            'name' => 'string', 
+            'phone' => 'min:10|max:15|regex:/^[- +()]*[0-9][- +()0-9]*$/',
             'email' => 'email|regex:/^([a-z0-9\+\-]+)(\.[a-z0-9\+\-]+)*@([a-z0-9\-]+\.)+([a-z]{2,6})$/',
-            'address' => 'required|string',
-            'password' => 'required|string',
-            'role' => 'required'
+            'address' => 'string',
+
+            'role' => ''
         ]);
             $user = User::find($id);    
             $user->name = trim($request->name);
@@ -183,7 +183,7 @@ class PenggunaController extends Controller
             $user->role = $request->role;
 
 		$user->save();
-		return redirect('/setting/custom/list')->with('message','Successfully Updated');
+		return redirect('/pengguna/senarai')->with('message','Successfully Updated');
     }
 
     /**

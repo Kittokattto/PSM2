@@ -24,7 +24,9 @@ Route::prefix('pengguna')->group(function () {
     Route::get('/senarai',['as'=>'/senarai/pengguna','uses'=>'Penggunacontroller@index']);
     Route::get('/tambah',['as'=>'/tambah/pengguna','uses'=>'Penggunacontroller@add']);
     Route::post('/store',['as'=>'/tambah/pengguna','uses'=>'Penggunacontroller@store']);
-    Route::get('/edit/{id}',['as'=>'/senarai/maklumat','uses'=>'Penggunacontroller@edit']);
+    Route::get('/edit/{id}',['as'=>'/maklumat','uses'=>'Penggunacontroller@edit']);
+    Route::get('senarai/update/{id}',['as'=>'/kemaskini','uses'=>'Penggunacontroller@update
+    ']);
 });
 
 Route::prefix('/failkes')->group(function () {

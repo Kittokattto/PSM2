@@ -70,7 +70,7 @@
                                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
+                                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" placeholder="{{$user->name}}" required autocomplete="name" autofocus>
                     
                                                     @error('name')
                                                         <span class="invalid-feedback" role="alert">
@@ -84,7 +84,7 @@
                                                 <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('No Telefon') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $user->phone }}" required autocomplete="phone" autofocus>
+                                                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $user->phone }}" placeholder="{{$user->phone}}" required autocomplete="phone" autofocus>
                     
                                                     @error('phone')
                                                         <span class="invalid-feedback" role="alert">
@@ -98,7 +98,7 @@
                                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email}}" required autocomplete="email">
+                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" placeholder="{{$user->email}}" required autocomplete="email">
                     
                                                     @error('email')
                                                         <span class="invalid-feedback" role="alert">
@@ -112,7 +112,7 @@
                                                 <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{$user->address }}" required autocomplete="address" autofocus>
+                                                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ $user->address }}" placeholder="{{$user->address}}" required autocomplete="address" autofocus>
                     
                                                     @error('address')
                                                         <span class="invalid-feedback" role="alert">
@@ -126,7 +126,7 @@
                                                 <label for="department" class="col-md-4 col-form-label text-md-right">{{ __('Jabatan') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="department" type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ $user->department }}" required autocomplete="name" autofocus>
+                                                    <input id="department" type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ $user->department }}" placeholder="{{$user->department}}" required autocomplete="name" autofocus>
                     
                                                     @error('department')
                                                         <span class="invalid-feedback" role="alert">
@@ -141,7 +141,7 @@
                     
                                                 <div class="col-md-6">
                                                     {{-- <input id="role" type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ old('department') }}" required autocomplete="name" autofocus> --}}
-                                                    <select name="role" id="role" class="form-control @error('role') is-invalid @enderror" value="{{ old('role') }}" required autocomplete="role" autofocus>
+                                                    <select name="role" id="role" class="form-control @error('role') is-invalid @enderror" value="{{ $user->role }}" placeholder="{{$user->role}}" required autocomplete="role" autofocus>
                                                         <option value="admin">Admin</option>
                                                         <option value="staff">Staff</option>
                                                       </select>
@@ -162,7 +162,7 @@
                                             <div class="form-group row mb-0">
                                                 <div class="col-md-6 offset-md-4">
                                                     <button type="submit" class="btn btn-primary">
-                                                        {{ __('Update') }}
+                                                        {{ __('Kemaskini') }}
                                                     </button>
 
                                                 </div>
