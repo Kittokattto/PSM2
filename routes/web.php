@@ -26,6 +26,8 @@ Route::prefix('pengguna')->group(function () {
     Route::post('/store',['as'=>'/tambah/pengguna','uses'=>'Penggunacontroller@store']);
     Route::get('/edit/{id}',['as'=>'/maklumat','uses'=>'Penggunacontroller@edit']);
     Route::post('edit/update/{id}',['as'=>'/kemaskini','uses'=>'Penggunacontroller@update']);
+    Route::get('/padam/{id}',['as'=>'/maklumat','uses'=>'Penggunacontroller@destroy']);
+
 });
 
 Route::prefix('/failkes')->group(function () {

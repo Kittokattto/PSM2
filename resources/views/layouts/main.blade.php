@@ -16,10 +16,12 @@
 
 
         <!-- Fonts -->
-
          <link rel="stylesheet" href=" {{ URL::asset('css/fontawesome.css')}}">
         {{-- <link rel="stylesheet" href=" {{ URL::asset('css/all.css')}}"> --}}
         {{-- <link rel="stylesheet" href=" {{ URL::asset('css/fontawesome.min.css')}}"> --}}
+
+        <!-- Sweet Alert -->
+        
     </head>
     <body>
 
@@ -131,6 +133,7 @@
 
 
         <!-- jQuery CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
          <!-- Bootstrap Js CDN -->
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

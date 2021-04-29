@@ -25,8 +25,9 @@ class PenggunaController extends Controller
     public function index()
     {
         
-		$user = User::orderBy('created_at','desc')->get();
-				
+		$user = User::orderBy('created_at','desc')->where('soft_delete', '=', 0)->get();
+		
+
 		return view('pengguna.senarai',compact('user')); 
     }
 
@@ -63,6 +64,7 @@ class PenggunaController extends Controller
     {
         $userid = Auth::user()->id;
         $adminName = getUserName($userid);
+        $softdelete = 0;
         $this->validate($request, [
        
             'name' => 'required|string', 
@@ -95,6 +97,7 @@ class PenggunaController extends Controller
                 'department' => $request['department'],
                 'phone' => trim($request['phone']),
                 'registerBy' => $adminName,
+                'soft_delete' => $softdelete,
                 'role' => $request['role'],
                 'password' => Hash::make($request['password'],
                 
@@ -157,12 +160,6 @@ class PenggunaController extends Controller
     public function update(Request $request, $id)
     {
         //
-        // $tbl_custom_fields = CustomField::find($id);
-		// $tbl_custom_fields->form_name=Input::get('formname');
-		// $tbl_custom_fields->label=Input::get('labelname');
-		// $tbl_custom_fields->type=Input::get('typename');
-		// $tbl_custom_fields->required=Input::get('required');
-		// $tbl_custom_fields->always_visable=Input::get('visable');
 		
         $this->validate($request, [
        
@@ -182,6 +179,7 @@ class PenggunaController extends Controller
             $user->role = $request->role;
     
 		$user->save();
+
 		return redirect('/pengguna/senarai')->with('message','Successfully Updated');
     }
 
@@ -193,6 +191,9 @@ class PenggunaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Soft_delete implement so not data lost but stay in database
+        $user= User::where('id','=',$id)->update(['soft_delete' => 1]);
+
+        return redirect('pengguna/senarai')->with('message','Successfully Deleted');
     }
 }

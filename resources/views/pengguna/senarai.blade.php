@@ -88,7 +88,7 @@
 
 												<a href="{!! url('/pengguna/show/'.$users->id) !!}"><button type="button" class="btn btn-round btn-info">{{ trans('View') }}</button></a>
 												<a href="{!! url('/pengguna/edit/'.$users->id) !!}" ><button type="button" class="btn btn-round btn-success">{{ trans('Edit') }}</button></a>
-												<a url="{!! url('/pengguna/delete/'.$users->id) !!}" class="sa-warning buttonOfAtag"><button type="button" id="threeBtnInOneLine" class="btn btn-round btn-danger ">{{ trans('Delete') }}</button></a>
+												<a url="{!! url('/pengguna/padam/'.$users->id) !!}" class="sa-warning buttonOfAtag"><button type="button" id="threeBtnInOneLine" class="btn btn-round btn-danger ">{{ trans('Delete') }}</button></a>
 
 										</td>
 									</tr>
@@ -113,6 +113,67 @@
 		</div>
 	</div>
 	@endif
+
+
+
+	
+<script>
+	document.addEventListener("DOMContentLoaded", function(event) {
+	$('body').on('click', '.sa-warning', function() {
+	
+		var url =$(this).attr('url');
+		
+		
+		 	Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+			}).then((result) => {
+				if (result.value) {
+					window.location.href = url;
+					Swal.fire(
+					'Deleted!',
+					'Your imaginary file has been deleted.',
+					'success'
+					)
+				// For more information about handling dismissals please visit
+				// https://sweetalert2.github.io/#handling-dismissals
+				} else if (result.dismiss === Swal.DismissReason.cancel) {
+					Swal.fire(
+					'Cancelled',
+					'Your imaginary file is safe :)',
+					'error'
+					)
+				}
+				})
+	  }); 
+  } );
+
+// $('body').on('click', '.sa-warning', function() {
+	
+// 	var url =$(this).attr('url');
+	
+	
+// 	  swal({   
+// 		  title: "Are You Sure?",
+// 		  text: "You will not be able to recover this data afterwards!",   
+// 		  type: "warning",   
+// 		  showCancelButton: true,   
+// 		  confirmButtonColor: "#297FCA",   
+// 		  confirmButtonText: "Yes, delete!",   
+// 		  closeOnConfirm: false 
+// 	  }, function(){
+// 		  window.location.href = url;
+		   
+// 	  });
+//   }); 
+// } );
+   
+  </script>
 
 
 @endsection
