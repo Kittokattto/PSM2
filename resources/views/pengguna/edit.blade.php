@@ -141,9 +141,9 @@
                     
                                                 <div class="col-md-6">
                                                     {{-- <input id="role" type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ old('department') }}" required autocomplete="name" autofocus> --}}
-                                                    <select name="role" id="role" class="form-control @error('role') is-invalid @enderror" value="{{ $user->role }}" placeholder="{{$user->role}}" required autocomplete="role" autofocus>
-                                                        <option value="admin">Admin</option>
-                                                        <option value="staff">Staff</option>
+                                                    <select name="role" id="role" class="form-control @error('role') is-invalid @enderror"  placeholder="{{$user->role}}" required autocomplete="role" autofocus>
+                                                        <option value="admin" <?php if($user->role == 'admin'){ echo "selected"; }?>>Admin</option>
+                                                        <option value="staff" <?php if($user->role == 'staff'){ echo "selected"; }?>>Staff</option>
                                                       </select>
                                                     @error('role')
                                                         <span class="invalid-feedback" role="alert">

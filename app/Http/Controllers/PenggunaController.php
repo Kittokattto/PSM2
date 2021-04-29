@@ -143,7 +143,7 @@ class PenggunaController extends Controller
     {
         //
         $user = User::where('id','=',$id)->first();
-
+   
         return view ('pengguna.edit',compact('user'));
     }
 
@@ -179,9 +179,8 @@ class PenggunaController extends Controller
             $user->email = $request->email;
             $user->address = trim($request->address);
             $user->department =$request->department;
-            $user->registerBy = $adminName;
             $user->role = $request->role;
-
+    
 		$user->save();
 		return redirect('/pengguna/senarai')->with('message','Successfully Updated');
     }
