@@ -60,14 +60,16 @@
 								<tr>
 									<th>#</th>
 
-									<th>{{ trans('Nama')}}</th>
-                                    <th>{{ trans('No Telefon')}}</th>
-                                    <th>{{ trans('Email')}}</th>
-									<th>{{ trans('Alamat')}}</th> 
-									<th>{{ trans('Jabatan')}}</th>
-                                    <th>{{ trans('Didaftar Oleh')}}</th>
-                                    <th>{{ trans('Tarikh Mendaftar')}}</th>
-									<th>{{ trans('Tindakan')}}</th> 
+									<th>{{ trans('No. Hakmilik')}}</th>
+									<th>{{ trans('Jenis Hakmilik')}}</th>
+									<th>{{ trans('Pemilik')}}</th>
+                                    <th>{{ trans('Bandar/Pekan/Mukim')}}</th>
+                                    <th>{{ trans('Tempat')}}</th>
+									<th>{{ trans('No.Lot')}}</th> 
+									<th>{{ trans('No.Lembaran')}}</th>
+									<th>{{ trans('No.Pelan Diperakui')}}</th>
+                                    <th>{{ trans('Pemilik')}}</th>
+									<th>{{ trans('Luas Lot')}}</th>
 								</tr>
 							</thead>
 							<tbody>
